@@ -1,32 +1,33 @@
-//First function to work on is aading a random number generator between 1 and 6
-//as a dice only have 6 possible numbers
+const DisplayRollDice = function () {
+  // Generate a new random dice number each time the function is called
+  const diceNumber = Math.floor(Math.random() * 6) + 1;
+  const imageDisplayedOfDice = document.querySelector('.dice');
 
-const rollDice = function () {
-  return Math.floor(Math.random() * 6) + 1;
-};
-
-console.log(rollDice());
-
-let player1Score = 0;
-let player2Score = 0;
-
-const showResult = function () {
-  const dice1 = rollDice();
-
-  const picture = document.querySelector('.dice');
-
-  if (rollDice === 1) {
-    picture.src = 'dice1.png';
-  } else if (rollDice === 2) {
-    picture.src = 'dice2.png';
-  } else if (rollDice === 4) {
-    picture.src = 'dice4.png';
-  } else if (rollDice === 5) {
-    picture.src = 'dice5.png';
-  } else if (rollDice === 6) {
-    picture.src = 'dice6.png';
+  // Set the image based on the random number
+  if (diceNumber === 1) {
+    imageDisplayedOfDice.src = 'dice-1.png';
+  } else if (diceNumber === 2) {
+    imageDisplayedOfDice.src = 'dice-2.png';
+  } else if (diceNumber === 3) {
+    imageDisplayedOfDice.src = 'dice-3.png';
+  } else if (diceNumber === 4) {
+    imageDisplayedOfDice.src = 'dice-4.png';
+  } else if (diceNumber === 5) {
+    imageDisplayedOfDice.src = 'dice-5.png';
+  } else if (diceNumber === 6) {
+    imageDisplayedOfDice.src = 'dice-6.png';
   }
 };
 
+const changeDiceOnRollClick = function () {
+  document
+    .querySelector('.btn--roll')
+    .addEventListener('click', DisplayRollDice);
+};
 
+// Make sure this function is called to attach the event listener
+changeDiceOnRollClick();
 
+const currentPlayer = function (){
+    
+};
